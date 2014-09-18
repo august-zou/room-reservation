@@ -7,7 +7,7 @@ class CreateReservationRecords < ActiveRecord::Migration
       t.datetime :stop_datetime
       t.string :usage
       t.text :remarks
-
+      t.integer :status
       t.timestamps
     end
   end

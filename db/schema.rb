@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140917235924) do
     t.datetime "stop_datetime"
     t.string   "usage"
     t.text     "remarks"
+    t.integer  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140917235924) do
     t.string   "email"
     t.string   "phone"
     t.string   "password_digest"
+    t.integer  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
