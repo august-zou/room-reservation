@@ -15,6 +15,8 @@ gem "slim-rails"
 gem 'active_model_serializers'
 gem 'jquery-ui-rails'
 gem 'acts_as_list'
+gem 'will_paginate-bootstrap'
+
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'

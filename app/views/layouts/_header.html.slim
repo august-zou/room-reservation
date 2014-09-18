@@ -12,10 +12,10 @@ div class="navbar navbar-default navbar-fixed-top" role="navigation"
         li
           a href="#" 首页
         li
-          a href="#" 预约记录
+          = link_to '预约记录', reservations_path
       ul class="nav navbar-nav navbar-right"
         li
-          a href="#" 登录
+          = link_to '登录', login_path
         li
-          a href="#" 注册
+          == link_to '注册', new_user_path
 

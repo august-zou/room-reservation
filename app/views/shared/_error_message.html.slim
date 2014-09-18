@@ -1,0 +1,7 @@
+- if errors.any? 
+  div#error_explanation
+    div class="alert alert-danger"
+      p 你提交的数据有#{errors.count}个错误
+    ul
+      - errors.full_messages.each do |msg| 
+        li #{msg} 
