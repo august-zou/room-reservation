@@ -1,2 +1,7 @@
-h1 Users#edit
-p Find me in app/views/users/edit.html.slim
+div class="container container-form"
+  div.row
+    h3 class="page-header col-sm-offset-4 col-sm-4" 编辑用户
+  div.row
+    div class= "col-sm-offset-4 col-sm-4"
+      = render :partial =>"shared/error_message", locals: {errors: @user.errors}
+  = render "new_edit_form"

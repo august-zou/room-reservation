@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20140917235924) do
     t.string   "name"
     t.string   "staff_name"
     t.string   "staff_phone"
-    t.text     "remark"
+    t.text     "remarks"
     t.integer  "status",      default: 1
     t.datetime "created_at"
     t.datetime "updated_at"

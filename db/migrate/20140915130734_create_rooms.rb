@@ -4,7 +4,7 @@ class CreateRooms < ActiveRecord::Migration
       t.string :name
       t.string :staff_name
       t.string :staff_phone
-      t.text :remark
+      t.text :remarks
       t.integer :status, default: 1
 
       t.timestamps

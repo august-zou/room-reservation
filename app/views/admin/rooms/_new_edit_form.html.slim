@@ -1,0 +1,22 @@
+= form_for(@room,:url=>get_admin_room_form_url,:html => {:role => "form",:class=>"form-horizontal"}) do |f|
+    div.form-group
+      = f.label :name, "会议室名称",:class => "col-sm-4 control-label"
+      div.col-sm-3
+        =  f.text_field :name, :class => "form-control"
+    div.form-group
+      = f.label :staff_name, "负责人名字",:class => "col-sm-4 control-label"
+      div.col-sm-3
+        =  f.text_field :staff_name, :class => "form-control"
+    div.form-group
+      = f.label :staff_phone, "联系方式",:class => "col-sm-4 control-label"
+      div.col-sm-3
+        = f.text_field :staff_phone, :class => "form-control"
+    div.form-group
+      = f.label :remarks, "备注",:class => "col-sm-4 control-label"
+      div.col-sm-3
+        = f.text_area :remarks, :class => "form-control"
+    div.form-group   
+      div class="col-sm-offset-4 col-sm-3"
+        = f.submit "提交",:class=>"btn btn-default btn-primary btn-block"
+
+

@@ -14,10 +14,13 @@ class ReservationRecord < ActiveRecord::Base
 
   private
   def validate_reservation_time
-    if self.start_datetime && self.stop_datetime
+    id_search = self.id 
+    id_search = -1 unless self.persisted?
+
+    if self.start_datetime && self.stop_datetime 
       errors[:base] << "开始时间必须大于结束时间" if self.start_datetime >= self.stop_datetime
       errors[:base] << "预约时间冲突" if !ReservationRecord.validate_reservation_time(self.room_id,
-          self.start_datetime,self.stop_datetime).empty?
+          self.start_datetime,self.stop_datetime).where.not(id: self.id).empty?
     end
   end
 

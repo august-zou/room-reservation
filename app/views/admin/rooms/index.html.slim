@@ -2,7 +2,7 @@ div class="container"
   div.row
     h3 class="page-header" 会议室列表
   div class="row handler_row"
-    button type="button" class="btn btn-default" 添加会议室
+    = link_to '添加会议室', new_admin_room_path, :class =>"btn btn-default request_btn" 
   div.row
     table class="table table-bordered"
       thead
@@ -18,10 +18,10 @@ div class="container"
             td = room.name
             td = room.staff_name
             td = room.staff_phone
-            td = room.remark
+            td = room.remarks
             td
-              = link_to "编辑  ","#"
-              = link_to "删除","#"
+              = link_to "编辑  ",edit_admin_room_path(room)
+              = link_to "删除", admin_room_path(room), :method => "delete"
   div class="row"
     = will_paginate @rooms, renderer: BootstrapPagination::Rails if @rooms
     span class ="page_entries_info"

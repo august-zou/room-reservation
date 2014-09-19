@@ -22,6 +22,13 @@ class ReservationsController < ApplicationController
   end
 
   def update
+    @reservation_record = ReservationRecord.find(params[:id])
+    if @reservation_record.update_attributes(reservation_params)
+        flash[:success] = "保存成功" 
+    else
+        flash[:danger] = "保存失败"
+    end
+    render 'edit'
   end
 
   def destroy
@@ -36,7 +43,7 @@ class ReservationsController < ApplicationController
 
   private
   def reservation_params
-    permited = params.required(:reservation_record).permit(:room_id, :start_datetime, :stop_datetime)  
+    permited = params.required(:reservation_record).permit(:room_id, :start_datetime, :stop_datetime,:usage,:remarks)  
     permited[:user_id] = current_user.id
     permited
   end

@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   
   namespace 'admin' do
     resources :reservations
-    resources :users
+    resources :users do
+      get 'set_admin', on: :member
+    end
     resources :rooms
   end
   root 'home#index'  
