@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//  require bootstrap_datetimepicker_railsx/bootstrap-datetimepicker
 //= require_tree .

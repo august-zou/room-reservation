@@ -2,7 +2,7 @@ div class="container"
   div.row
     h3 class="page-header" 我的预约记录
   div class="row handler_row"
-    button type="button" class="btn btn-default" 添加预约
+    = link_to '添加预约', new_reservation_path, :class =>"btn btn-default request_btn" 
   div.row
     table class="table table-bordered"
       thead
@@ -24,8 +24,8 @@ div class="container"
             td = record.usage
             td = record.remarks
             td 
-              = link_to "编辑  ","#"
-              = link_to "删除","#"
+              = link_to "编辑  ",edit_reservation_path(record)
+              = link_to "删除", reservation_path(record), :method=>"delete"
   div class="row"
     = will_paginate @reservation_records, renderer: BootstrapPagination::Rails if @reservation_records
     span class ="page_entries_info"

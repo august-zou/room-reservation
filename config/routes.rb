@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users, :only=>[:new,:create,:edit,:update]
   resources :sessions, :only=>[:new,:create,:destroy]
   resources :reservations
+  
   namespace 'admin' do
     resources :reservations
     resources :users

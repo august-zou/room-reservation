@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/august-zou/bootstrap_datetimepicker_railsx.git
+  revision: 5d7f9c93ece605094d6e6da1b993974910cee599
+  branch: rails4.1.1
+  specs:
+    bootstrap_datetimepicker_railsx (0.0.1)
+      rails (~> 4.1.1)
+
 GEM
   remote: http://ruby.taobao.org/
   specs:
@@ -192,6 +200,7 @@ DEPENDENCIES
   acts_as_list
   bcrypt-ruby
   bootstrap-sass (~> 3.2.0)
+  bootstrap_datetimepicker_railsx!
   capistrano-rails
   coffee-rails (~> 4.0.0)
   debugger

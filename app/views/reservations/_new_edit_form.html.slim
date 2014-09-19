@@ -1,0 +1,31 @@
+= form_for(@reservation_record,:url=>reservations_path, :method=>"post", :html => {:role => "form",:class=>"form-horizontal"}) do |f|
+    div.form-group
+      = f.label :name, "会议室名称",:class => "col-sm-4 control-label"
+      div.col-sm-3
+        = f.select(:room_id,Room.all.collect {|r| [ r.name, r.id ] }, { },{:class => 'form-control'})
+    div.form-group
+      = f.label :start_datetime, "开始时间",:class => "col-sm-4 control-label"
+      dif.col-sm-3
+        = f.datetime_local_field :start_datetime, :class => "form-control", :placeholder => Time.now.strftime("%Y-%m-%d"" %H:%M")
+
+      / div class="col-sm-3 input-group date form_datetime" data-date-format="yyyy-mm-dd - HH:ii p"    data-link-field="dtp_input1"
+        / = f.text_field :start_datetime,:class => "form-control", :required =>"true"
+        /   span class="input-group-addon"
+        /     span class="glyphicon glyphicon-th"
+    div.form-group
+      = f.label :stop_datetime, "结束时间",:class => "col-sm-4 control-label"
+      div.col-sm-3
+        = f.datetime_local_field :stop_datetime, :class => "form-control", :placeholder => (Time.now+1.hour).strftime("%Y-%m-%d"" %H:%M")
+    div.form-group
+      = f.label :usage, "使用说明",:class => "col-sm-4 control-label"
+      div.col-sm-3
+        = f.text_area :usage, :class => "form-control"
+    div.form-group
+      = f.label :remarks, "备注",:class => "col-sm-4 control-label"
+      div.col-sm-3
+        = f.text_area :remarks, :class => "form-control"
+    div.form-group
+      div class="col-sm-offset-4 col-sm-3"
+        = f.submit "提交",:class=>"btn btn-default btn-primary btn-block"
+
+

@@ -16,6 +16,7 @@ gem 'active_model_serializers'
 gem 'jquery-ui-rails'
 gem 'acts_as_list'
 gem 'will_paginate-bootstrap'
+gem "bootstrap_datetimepicker_railsx",:git =>"https://github.com/august-zou/bootstrap_datetimepicker_railsx.git",:branch=>"rails4.1.1"
 
 
 group :doc do
