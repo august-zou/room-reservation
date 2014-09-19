@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20140917235924) do
     t.datetime "stop_datetime"
     t.string   "usage"
     t.text     "remarks"
-    t.integer  "status"
+    t.integer  "status",         default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20140917235924) do
     t.string   "staff_name"
     t.string   "staff_phone"
     t.text     "remark"
-    t.integer  "status"
+    t.integer  "status",      default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -41,7 +41,8 @@ ActiveRecord::Schema.define(version: 20140917235924) do
     t.string   "email"
     t.string   "phone"
     t.string   "password_digest"
-    t.integer  "status"
+    t.integer  "status",          default: 0
+    t.boolean  "is_admin",        default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -14,8 +14,22 @@ div class="navbar navbar-default navbar-fixed-top" role="navigation"
         li
           = link_to '预约记录', reservations_path
       ul class="nav navbar-nav navbar-right"
-        li
-          = link_to '登录', login_path
-        li
-          == link_to '注册', new_user_path
+        - if logined?
+          li.dropdown 
+            = link_to user_path(current_user),:class=>"dropdown-toggle", :data=>{:toggle=>"dropdown"} 
+              = current_user.name
+              span.caret
+
+            ul.dropdown-menu role="menu"
+              li
+                = link_to "个人信息", "#"
+              li.divider
+              li
+                = link_to "退出","#"
+        - else
+          li
+            = link_to '登录', login_path
+          li
+            = link_to '注册', new_user_path
+         
 

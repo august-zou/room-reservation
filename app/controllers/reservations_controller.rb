@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
   def index
+    @reservation_records = ReservationRecord.all
   end
 
   def show
