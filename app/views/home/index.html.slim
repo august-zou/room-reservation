@@ -1,3 +1,30 @@
 div class="container"
-  h1 会议室预约系统
-  
+  div.row
+    h3 class="page-header" 会议室所有预约记录列表
+  div.row
+    table class="table table-bordered"
+      thead
+        tr
+          th 会议室
+          th 预约者 
+          th 预约开始时间
+          th 预约结束时间
+          th 使用说明
+          th 备注
+          th 操作
+      tbody
+        - @reservation_records.each do |record|
+          tr
+            td = record.room.name
+            td = record.user.name
+            td = record.start_datetime.strftime("%Y-%m-%d"" %H:%M")
+            td = record.stop_datetime.strftime("%Y-%m-%d"" %H:%M")
+            td = record.usage
+            td = record.remarks
+            td 
+              = link_to "编辑  ","#"
+              = link_to "删除","#"
+  div class="row"
+    = will_paginate @reservation_records, renderer: BootstrapPagination::Rails if @reservation_records
+    span class ="page_entries_info"
+      = page_entries_info @reservation_records

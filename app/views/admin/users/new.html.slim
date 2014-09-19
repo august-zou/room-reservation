@@ -1,0 +1,24 @@
+div class="container container-form"
+  div.row
+    h3 class="page-header col-sm-offset-4 col-sm-4" 注册用户
+  div.row
+    div class= "col-sm-offset-4 col-sm-4"
+      = render :partial =>"shared/error_message", locals: {errors: @user.errors}
+  = form_for(@user,:html => {:role => "form",:class=>"form-horizontal"}) do |f|
+    div.form-group
+      = f.label :name, "用户名",:class => "col-sm-4 control-label"
+      div.col-sm-3
+        = f.text_field :name, :class => "form-control"
+    div.form-group
+      = f.label :password, "密码",:class => "col-sm-4 control-label"
+      div.col-sm-3
+        = f.password_field :password, :class => "form-control"
+    div.form-group
+      = f.label :password_confirmation, "确认密码",:class => "col-sm-4 control-label"
+      div.col-sm-3
+        = f.password_field :password_confirmation, :class => "form-control"
+    div.form-group
+      div class="col-sm-offset-4 col-sm-3"
+        = f.submit "注册",:class=>"btn btn-default btn-primary btn-block"
+
+

@@ -1,6 +1,6 @@
 class Admin::ReservationsController < ApplicationController
   def index
-    @reservation_records = current_user.reservation_records.paginate(:page => params[:page])
+    @reservation_records = ReservationRecord.paginate(:page => params[:page])
   end
 
   def show
