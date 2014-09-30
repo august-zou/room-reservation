@@ -45,3 +45,6 @@ zh-CN:
               blank: "不能为空"
             password_confirmation:
               confirmation: "有误"
+  datetime:
+    formats:
+      default: "%Y-%m-%d %H:%M"

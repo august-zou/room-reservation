@@ -9,7 +9,7 @@ class ReservationRecord < ActiveRecord::Base
 
   scope :validate_reservation_time, ->(room_id,start_datetime,stop_datetime){
     where("room_id = ? AND start_datetime between ? and ? OR stop_datetime between ? and ?", room_id,
-    start_datetime, stop_datetime,start_datetime,stop_datetime)
+    start_datetime+1.minute, stop_datetime, start_datetime+1.minute,stop_datetime)
 }
 
   private

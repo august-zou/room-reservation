@@ -12,12 +12,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bcrypt-ruby'
 gem "slim-rails"
-gem 'active_model_serializers'
 gem 'jquery-ui-rails'
-gem 'acts_as_list'
 gem 'will_paginate-bootstrap'
-gem "bootstrap_datetimepicker_railsx",:git =>"https://github.com/august-zou/bootstrap_datetimepicker_railsx.git",:branch=>"rails4.1.1"
-
+gem "pg"
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
@@ -33,7 +30,7 @@ group :test do
   gem 'capistrano-rails'
 end
 
-gem 'unicorn'
+gem 'thin'
 
 gem 'debugger', group: [:development, :test]
 

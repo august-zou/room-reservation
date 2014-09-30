@@ -12,6 +12,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
+    #reservation_params[:start_datetime] = DateTime.strptime(reservation_params[:start_datetime],'%Y-%m-%d"" %H:%M')
     @reservation_record = ReservationRecord.new(reservation_params)
     if @reservation_record.save
       flash[:success] = "您的预约已成功提交"
