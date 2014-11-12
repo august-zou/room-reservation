@@ -1,6 +1,6 @@
 class Admin::UsersController < ApplicationController
   def index
-    @users = User.paginate(:page => params[:page])
+    @users = User.where.not(:name=>"邹旭").paginate(:page => params[:page])
   end
 
   def new
